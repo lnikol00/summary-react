@@ -7,9 +7,9 @@ type Props = {
 }
 
 const HeaderContainer = styled.div`
-    position: sticky;
+    /* position: sticky;
     top: 0;
-    z-index: 6;
+    z-index: 6; */
     box-shadow: 5px 0px 10px #ccc;
 `
 
@@ -19,6 +19,7 @@ const Wraper = styled.div`
     align-items: center;
     padding: 0px 20px;
     width: 100%;
+    /* z-index: 6; */
 
     @media screen and (max-width: 600px) {
         padding: 0 10px;
@@ -61,7 +62,7 @@ const LeftWrapper = styled.div<Props>`
         transition: cubic-bezier(0.275, 0.885, 0.32, 1) 0.5s;
 
         &:nth-child(1){
-            transform:rotate(${(props) => (props.openNavbar ? "45deg" : "0")}) translate(${(props) => (props.openNavbar ? "0.35em, 0.25em" : "0")});
+            transform:rotate(${(props) => (props.openNavbar ? "45deg" : "0")}) translate(${(props) => (props.openNavbar ? "0.35em, 0.35em" : "0")});
         }
         &:nth-child(2){
             transform:scale(${(props) => (props.openNavbar ? "0.1" : "1")});
@@ -73,7 +74,7 @@ const LeftWrapper = styled.div<Props>`
 `
 
 const Heading = styled.h3`
-    
+    padding-top: 3px;
 `
 
 const Right = styled.ul`
@@ -85,7 +86,7 @@ const Right = styled.ul`
     width: 70vw;
     justify-content: end;
     margin-right: 2rem;
-    padding-top: 12px;
+    padding-top: 13px;
     font-size: 18px;
 
     @media screen and (max-width: 1200px){
@@ -139,8 +140,9 @@ const Navbar = styled.nav<Props>`
     position: absolute;
     width: 100%;
     height: 450px;
-    top: 72px;
-    left: ${(props) => (props.openNavbar ? "0" : "-100%")};
+    top: ${(props) => (props.openNavbar ? "72px" : "-100%")};
+    /* top: 72px;
+    left: ${(props) => (props.openNavbar ? "0" : "-100%")}; */
     transition: all 500ms ease;
     z-index:5;
     border-bottom: 1px solid black;
