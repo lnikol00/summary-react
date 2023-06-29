@@ -19,6 +19,7 @@ const TopContainer = styled.div`
     justify-content: space-around;
     align-items: center;
     background-color:#44c0ea;
+    color: white;
     padding-bottom: 50px;
     width:90%;
     height: 60%;
@@ -29,13 +30,13 @@ const TopContainer = styled.div`
 const Left = styled.div`
     display: flex;
     justify-content: flex-end;
-    border-top: 1px solid black;
+    border-top: 1px solid white;
     border-top-left-radius: 14px;
     gap: 60px;
     span{
-        border-bottom: 1px solid black;
-        border-left: 1px solid black;
-        border-right: 1px solid black;
+        border-bottom: 1px solid white;
+        border-left: 1px solid white;
+        border-right: 1px solid white;
         border-radius: 16px;
         padding: 2px 10px;
         text-transform:uppercase;
@@ -51,13 +52,13 @@ const Left = styled.div`
 const Right = styled.div`
     display: flex;
     justify-content: flex-end;
-    border-top: 1px solid black;
+    border-top: 1px solid white;
     border-top-left-radius: 14px;
     gap: 60px;
    span{
-        border-bottom: 1px solid black;
-        border-left: 1px solid black;
-        border-right: 1px solid black;
+        border-bottom: 1px solid white;
+        border-left: 1px solid white;
+        border-right: 1px solid white;
         border-radius: 16px;
         padding: 2px 10px;
         text-transform:uppercase;
@@ -81,6 +82,10 @@ const Profile = styled.div`
     align-items: center;
     grid-template-columns: repeat(4, auto);
     gap: 12rem;
+
+    h5{
+        color: white;
+    }
 
     p{
         color: white;
