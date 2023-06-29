@@ -140,7 +140,7 @@ const Navbar = styled.nav<Props>`
     height: 450px;
     background-color: white;
     top: ${(props) => (props.openNavbar ? "72px" : "-100%")};
-    transition: all 1000ms ease;
+    transition: all 750ms ease;
     z-index:5;
     border-bottom: 1px solid black;
 

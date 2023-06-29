@@ -1,4 +1,8 @@
 import styled from "styled-components"
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import * as GoIcons from "react-icons/go"
+import { useState } from "react";
 
 const FooterContainer = styled.div`
     display: flex;
@@ -67,22 +71,40 @@ const Right = styled.div`
 `
 
 const CenterContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+`
+const Profile = styled.div`
     display:grid;
     align-items: center;
     grid-template-columns: repeat(4, auto);
     gap: 12rem;
-    height: 40%;
 
     p{
         color: white;
     }
 `
+
+const Contact = styled.div`
+    width:700px;
+
+    h2{
+        color: white;
+    }
+`
+
 const BottomContainer = styled.div`
     display: flex;
     justify-content: space-between;
     width: 100%;
 
-    padding: 1rem 5rem;
+    padding: 1rem 6rem;
+
+    div{
+        color: white;
+    }
 `
 
 const Selector = styled.div`    
@@ -94,9 +116,29 @@ const Selector = styled.div`
     background-color: white;
     border: 1px solid black;
     width: 300px;
+    
+    div{
+        color: black;
+    }
+`
+
+const Button = styled.button`
+    border-radius: 8px;
+    outline:none;
+    border:none;
+    width: 100px;
+    height: 35px;
+    margin-top: 10px;
 `
 
 function Footer() {
+
+    const [change, setChange] = useState<boolean>(true);
+
+    const handleChange = () => {
+        setChange(!change)
+    }
+
     return (
         <FooterContainer>
             <TopContainer>
@@ -110,29 +152,48 @@ function Footer() {
                 </Right>
             </TopContainer>
             <CenterContainer>
-                <div>
-                    <h5>Get in touch</h5>
-                    <p>summary@summary.com <br />summary-help@summary.com</p>
-                </div>
-                <div>
-                    <h5>Connect</h5>
-                    <p>Facebook <br />Instagram</p>
-                </div>
-                <div>
-                    <h5>Design Services</h5>
-                    <p>Summary Design Services GmbH <br />Vukovarska 9 <br />20343 Ploče</p>
-                </div>
-                <div>
-                    <h5>Ventures</h5>
-                    <p>Summary Ventures GmbH <br />Vukovarska 9 <br />20343 Ploče</p>
-                </div>
+                {
+                    change ? <Profile>
+                        <div>
+                            <h5>Get in touch</h5>
+                            <p>summary@summary.com <br />summary-help@summary.com</p>
+                        </div>
+                        <div>
+                            <h5>Connect</h5>
+                            <p>Facebook <br />Instagram</p>
+                        </div>
+                        <div>
+                            <h5>Design Services</h5>
+                            <p>Summary Design Services GmbH <br />Vukovarska 9 <br />20343 Ploče</p>
+                        </div>
+                        <div>
+                            <h5>Ventures</h5>
+                            <p>Summary Ventures GmbH <br />Vukovarska 9 <br />20343 Ploče</p>
+                        </div>
+                    </Profile>
+                        :
+                        <Contact>
+                            <Form className="d-flex justify-content-center align-items-center flex-column w-100" data-bs-theme="dark">
+                                <h2>Contact us:</h2>
+                                <InputGroup className="py-3">
+                                    <InputGroup.Text id="basic-addon1"><GoIcons.GoMail /></InputGroup.Text>
+                                    <Form.Control
+                                        placeholder="Email"
+                                        aria-label="Email"
+                                        aria-describedby="basic-addon1"
+                                    />
+                                </InputGroup>
+                                <Button>Send!</Button>
+                            </Form>
+                        </Contact>
+                }
             </CenterContainer>
             <BottomContainer>
                 <div>
                     Made by Luka <br /> ©2023 Data Privacy Import
                 </div>
                 <Selector>
-                    <div>
+                    <div onClick={handleChange}>
                         Profile
                     </div>
                     <div>
