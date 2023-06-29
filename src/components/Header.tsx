@@ -7,9 +7,6 @@ type Props = {
 }
 
 const HeaderContainer = styled.div`
-    /* position: sticky;
-    top: 0;
-    z-index: 6; */
     box-shadow: 5px 0px 10px #ccc;
 `
 
@@ -19,7 +16,8 @@ const Wraper = styled.div`
     align-items: center;
     padding: 0px 20px;
     width: 100%;
-    /* z-index: 6; */
+    position: relative;
+    z-index: 6;
 
     @media screen and (max-width: 600px) {
         padding: 0 10px;
@@ -141,9 +139,7 @@ const Navbar = styled.nav<Props>`
     width: 100%;
     height: 450px;
     top: ${(props) => (props.openNavbar ? "72px" : "-100%")};
-    /* top: 72px;
-    left: ${(props) => (props.openNavbar ? "0" : "-100%")}; */
-    transition: all 500ms ease;
+    transition: all 1000ms ease;
     z-index:5;
     border-bottom: 1px solid black;
 
