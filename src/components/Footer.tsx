@@ -4,6 +4,10 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import * as GoIcons from "react-icons/go"
 import { useState } from "react";
 
+type Props = {
+    changeColor?: boolean;
+}
+
 const FooterContainer = styled.div`
     display: flex;
     justify-content: space-between;
@@ -12,6 +16,10 @@ const FooterContainer = styled.div`
     background-color: #3f3e3e;
     width: 100%;
     height: 650px;
+
+    @media screen and (max-width: 1200px){
+        height:100%;
+    }
 `
 
 const TopContainer = styled.div`
@@ -25,6 +33,13 @@ const TopContainer = styled.div`
     height: 60%;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
+
+    @media screen and (max-width: 1200px){
+        height:350px;
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 20px;
+    }
 `
 
 const Left = styled.div`
@@ -46,6 +61,13 @@ const Left = styled.div`
         display: flex;
         justify-content: flex-end;
         font-size: 5em;
+
+        @media screen and (max-width: 800px) {
+            font-size: 4em;
+        }
+        @media screen and (max-width: 400px) {
+            font-size: 1.5em;
+        }
     }
 `
 
@@ -68,6 +90,13 @@ const Right = styled.div`
         display: flex;
         justify-content: flex-end;
         font-size: 5em;
+
+        @media screen and (max-width: 800px) {
+            font-size: 4em;
+        }
+        @media screen and (max-width: 400px) {
+            font-size: 1.5em;
+        }
     }
 `
 
@@ -75,7 +104,7 @@ const CenterContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40%;
+    margin: 50px 0;
 `
 const Profile = styled.div`
     display:grid;
@@ -90,6 +119,17 @@ const Profile = styled.div`
     p{
         color: white;
     }
+
+    @media screen and (max-width: 1200px){
+        grid-template-columns: repeat(2, auto); 
+        gap: 8rem;
+
+    }
+    @media screen and (max-width: 700px){
+        grid-template-columns: repeat(1, auto); 
+        gap: 5rem;
+
+    }
 `
 
 const Contact = styled.div`
@@ -97,6 +137,10 @@ const Contact = styled.div`
 
     h2{
         color: white;
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 370px;
     }
 `
 
@@ -110,21 +154,47 @@ const BottomContainer = styled.div`
     div{
         color: white;
     }
+
+    @media screen and (max-width: 800px){
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
 `
 
 const Selector = styled.div`    
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     gap: 20px;
     border-radius: 32px;
     background-color: white;
     border: 1px solid black;
-    width: 300px;
-    
-    div{
-        color: black;
+    width: 350px;
+
+    @media screen and (max-width:800px) {
+        height: 45px;
     }
+`
+
+const FirstButton = styled.button<Props>`
+    width: 150px;
+    height: 35px;
+    border-radius: 32px;
+    outline: none;
+    border: none;
+    background-color: ${(props) => (props.changeColor ? "black" : "white")};
+    color: ${(props) => (props.changeColor ? "white" : "black")};
+`
+
+const SecondButton = styled.button<Props>`
+    width: 150px;
+    height: 35px;
+    border-radius: 32px;
+    outline: none;
+    border: none;
+    background-color: ${(props) => (props.changeColor ? "white" : "black")};
+    color: ${(props) => (props.changeColor ? "black" : "white")};
 `
 
 const Button = styled.button`
@@ -140,8 +210,12 @@ function Footer() {
 
     const [change, setChange] = useState<boolean>(true);
 
-    const handleChange = () => {
-        setChange(!change)
+    const handleChangeOne = () => {
+        setChange(true)
+    }
+
+    const handleChangeTwo = () => {
+        setChange(false)
     }
 
     return (
@@ -198,12 +272,12 @@ function Footer() {
                     Made by Luka <br /> ©2023 Data Privacy Import
                 </div>
                 <Selector>
-                    <div onClick={handleChange}>
+                    <FirstButton onClick={handleChangeOne} changeColor={change}>
                         Profile
-                    </div>
-                    <div>
+                    </FirstButton>
+                    <SecondButton onClick={handleChangeTwo} changeColor={change}>
                         Contact
-                    </div>
+                    </SecondButton>
                 </Selector>
             </BottomContainer>
         </FooterContainer>
