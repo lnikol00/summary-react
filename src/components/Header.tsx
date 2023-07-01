@@ -73,6 +73,15 @@ const LeftWrapper = styled.div<Props>`
 
 const Heading = styled.h3`
     padding-top: 3px;
+    
+    a{
+        text-decoration: none;
+        color: black;
+
+        &:hover{
+            color: #44c0ea;
+        }
+    }
 `
 
 const Right = styled.ul`
@@ -188,7 +197,7 @@ function Header() {
                         <div></div>
                         <div></div>
                     </LeftWrapper>
-                    <Heading>Summmary.co</Heading>
+                    <Heading><Link to="/">Summmary.co</Link></Heading>
                 </Left>
                 <Right>
                     <MenuLink><Link to="">Home</Link></MenuLink>
