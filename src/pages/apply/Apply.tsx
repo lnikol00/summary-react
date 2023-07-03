@@ -47,8 +47,8 @@ function Apply() {
             <FormContainer>
                 <h1>Job Application</h1>
                 <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                    <Row className="mb-3">
-                        <Form.Group as={Col} controlId="validationCustomFirstName">
+                    <Row>
+                        <Form.Group as={Col} md="6" controlId="validationCustomFirstName">
                             <FloatingLabel
                                 controlId="floatinFirstName"
                                 label="First Name"
@@ -65,7 +65,7 @@ function Apply() {
                                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                             </FloatingLabel>
                         </Form.Group>
-                        <Form.Group as={Col} controlId="validationCustomLastName">
+                        <Form.Group as={Col} md="6" controlId="validationCustomLastName">
                             <FloatingLabel
                                 controlId="floatinSecondName"
                                 label="Last Name"
@@ -133,7 +133,7 @@ function Apply() {
 
                         </Form.Group>
                     </Row>
-                    <Row className="mb-3">
+                    <Row className="mb-4">
                         <Form.Group as={Col} controlId="TextArea">
                             <FloatingLabel controlId="floatingTextarea" label="Tell us something about yourself">
                                 <Form.Control
