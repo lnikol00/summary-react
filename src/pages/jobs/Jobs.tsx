@@ -66,7 +66,7 @@ function Jobs() {
                             })}
                             <p>Missing an item or two from this list? Don’t let it discourage you from applying, nobody is perfect. As long as you’re not afraid of a challenge, everything else will fall into place!</p>
                         </div>
-                        <div className="points-container counter">
+                        <div className="points-container">
                             <h4>A good relationship is a two way street, so we’re offering:  </h4>
                             {position.counterpoints.map((cpoint) => {
                                 return (
