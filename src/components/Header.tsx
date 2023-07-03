@@ -203,7 +203,7 @@ function Header() {
                     <MenuLink><Link to="/">Home</Link></MenuLink>
                     <MenuLink><Link to={`/jobs/${1}`}>Frontend developer</Link></MenuLink>
                     <MenuLink><Link to={`/jobs/${2}`}>Backend developer</Link></MenuLink>
-                    <SpecialLink><Link to="">Get in touch</Link></SpecialLink>
+                    <SpecialLink><Link to="/apply">Get in touch</Link></SpecialLink>
                 </Right>
             </Wraper>
             <Navbar openNavbar={open}>

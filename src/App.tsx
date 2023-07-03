@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/home/Home';
 import Jobs from './pages/jobs/Jobs';
+import Apply from './pages/apply/Apply';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route index element={<Home />} />
             <Route path='jobs/:id' element={<Jobs />} />
+            <Route path='apply' element={<Apply />} />
           </Routes>
         </div>
         <Footer />
