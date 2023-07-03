@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/home/Home';
+import Jobs from './pages/jobs/Jobs';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <div className='main-container'>
           <Routes>
             <Route index element={<Home />} />
+            <Route path='jobs/:id' element={<Jobs />} />
           </Routes>
         </div>
         <Footer />

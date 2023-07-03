@@ -2,7 +2,8 @@
     "jobs": [
         {
             "id": 1,
-            "title": "Junior Frontend developer (React)",
+            "title": "Junior Frontend",
+            "subtitle": "React",
             "points": [
                 {
                     "id": 1,
@@ -122,7 +123,8 @@
         },
         {
             "id": 2,
-            "title": "Junior Backend developer (Node.js)",
+            "title": "Junior Backend",
+            "subtitle": "Node.js",
             "points": [
                 {
                     "id": 1,

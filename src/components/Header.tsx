@@ -1,6 +1,6 @@
+import styled from "styled-components"
 import { useState } from "react";
 import { Link } from "react-router-dom"
-import styled from "styled-components"
 
 type Props = {
     openNavbar?: boolean;
@@ -200,16 +200,16 @@ function Header() {
                     <Heading><Link to="/">Summmary.co</Link></Heading>
                 </Left>
                 <Right>
-                    <MenuLink><Link to="">Home</Link></MenuLink>
-                    <MenuLink><Link to="">Frontend developer</Link></MenuLink>
-                    <MenuLink><Link to="">Backend developer</Link></MenuLink>
+                    <MenuLink><Link to="/">Home</Link></MenuLink>
+                    <MenuLink><Link to={`/jobs/${1}`}>Frontend developer</Link></MenuLink>
+                    <MenuLink><Link to={`/jobs/${2}`}>Backend developer</Link></MenuLink>
                     <SpecialLink><Link to="">Get in touch</Link></SpecialLink>
                 </Right>
             </Wraper>
             <Navbar openNavbar={open}>
-                <Link to="">Home</Link>
-                <Link to="">Frontend developer</Link>
-                <Link to="">Backend developer</Link>
+                <Link to="" onClick={openNav}>Home</Link>
+                <Link to={`/jobs/${1}`} onClick={openNav}>Frontend developer</Link>
+                <Link to={`/jobs/${2}`} onClick={openNav}>Backend developer</Link>
             </Navbar>
         </HeaderContainer>
     )
