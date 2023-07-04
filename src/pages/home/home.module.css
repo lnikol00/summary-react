@@ -3,6 +3,9 @@ html {
 }
 
 .mainContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
     padding: 0 5%;
 }
 
@@ -60,6 +63,57 @@ html {
     width: 700px;
 }
 
+.aboutContainer {
+    padding-bottom: 3em;
+}
+
+.aboutContainer h1 {
+    font-size: 5rem;
+    font-weight: bolder;
+    padding-bottom: 15px;
+}
+
+.aboutContainer p {
+    font-size: 1.2em;
+}
+
+.employeesContainer h1 {
+    font-size: 5rem;
+    font-weight: bolder;
+    padding-bottom: 15px;
+}
+
+.list {
+    display: flex;
+    gap: 30px;
+    padding-bottom: 20px;
+}
+
+.listText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.listText h2 {
+    font-weight: bolder;
+}
+
+.listText span {
+    font-size: 2em;
+}
+
+.listText p {
+    font-size: 1.2em;
+}
+
+.listImage {
+    width: 300px;
+    height: 100%;
+
+}
+
 @media screen and (max-width: 1300px) {
     .topContainer {
         flex-direction: column;
@@ -72,6 +126,16 @@ html {
 
     .image img {
         margin-bottom: 2em;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .list {
+        flex-direction: column;
+    }
+
+    .listImage {
+        width: 100%;
     }
 }
 
@@ -88,5 +152,13 @@ html {
 
     .image img {
         width: 350px;
+    }
+
+    .aboutContainer h1 {
+        font-size: 3em;
+    }
+
+    .employeesContainer h1 {
+        font-size: 3em;
     }
 }

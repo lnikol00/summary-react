@@ -263,5 +263,77 @@
       "text": "dsad",
       "id": 3
     }
+  ],
+  "staff": [
+    {
+      "id": 1,
+      "position": "CEO",
+      "name": "Olivia Smith",
+      "image": "https://images.unsplash.com/photo-1525134479668-1bee5c7c6845?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmFuZG9tJTIwcGVvcGxlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+      "desc": "Olivia Smith is a natural-born leader with exceptional organizational and interpersonal skills. She has a knack for bringing people together, fostering a cohesive and productive team environment. Olivia's strategic mindset enables her to set clear goals and manage projects efficiently, ensuring that deadlines are met and deliverables are of the highest quality. Her ability to motivate and inspire her colleagues makes her a trusted and respected team leader."
+    },
+    {
+      "id": 2,
+      "position": "Senior Frontend Developer",
+      "name": "Ethan Parker",
+      "image": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "desc": "Ethan Parker is a dynamic and innovative web developer known for his out-of-the-box thinking. He constantly challenges conventional approaches, seeking creative solutions to complex problems. Ethan's deep understanding of cutting-edge technologies allows him to push the boundaries of web development and deliver unique and impactful solutions. His ability to think beyond the status quo makes him an invaluable contributor to brainstorming sessions, where he consistently generates fresh and imaginative ideas."
+    },
+    {
+      "id": 3,
+      "position": "Mid Frontend Developer",
+      "name": "Emma Johnson",
+      "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "desc": "Emma Johnson is a highly talented and detail-oriented web developer. Her meticulous approach ensures that every line of code is clean and efficient. With a strong eye for design, she excels at creating visually appealing and user-friendly interfaces. Emma's exceptional attention to detail extends to testing and debugging, ensuring that her projects are flawless. Her excellent communication skills make her a valuable asset in team collaborations, as she can effectively convey complex technical concepts to both technical and non-technical stakeholders."
+    },
+    {
+      "id": 4,
+      "position": "Seinor Backend Developer",
+      "name": "Liam Thompson",
+      "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "desc": "Liam Thompson is an adaptable and quick-thinking web developer who thrives in fast-paced environments. He is known for his ability to quickly grasp new concepts and technologies, allowing him to stay ahead of industry trends. Liam's strong multitasking abilities enable him to juggle multiple projects and meet tight deadlines without compromising quality. His versatility and agility make him an asset in rapidly evolving development landscapes."
+    },
+    {
+      "id": 5,
+      "position": "Mid Backend Developer",
+      "name": "Ava Davis",
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "desc": "Ava Davis is a highly creative web developer with an exceptional eye for design. Her artistic flair and attention to detail result in visually stunning and intuitive user interfaces. Ava is skilled in translating client requirements into captivating web designs, ensuring a seamless user experience. Her ability to balance aesthetics and functionality sets her work apart, making her a sought-after web developer in the industry."
+    },
+    {
+      "id": 6,
+      "position": "Product Designer",
+      "name": "Noah Wilson",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "desc": "Noah Wilson is an analytical and strategic-minded web developer. He excels at breaking down complex problems into logical and manageable components, allowing for efficient problem-solving. Noah's strong analytical skills enable him to leverage data and insights to optimize web applications and drive results. His ability to think critically and strategically makes him a valuable asset in developing scalable and high-performing web solutions."
+    },
+    {
+      "id": 7,
+      "position": "Product Designer",
+      "name": "Sophia Martinez",
+      "image": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "desc": "Sophia Martinez is a highly skilled web developer with exceptional communication abilities. Her strong interpersonal skills enable her to build rapport with clients and stakeholders, effectively understanding their needs and translating them into actionable development requirements. Sophia's knack for managing client expectations and her ability to deliver on promises make her a trusted partner in web development projects. Her excellent communication skills also contribute to smooth team collaborations and effective project coordination."
+    },
+    {
+      "id": 8,
+      "position": "Junior Frontend Developer",
+      "name": "Jackson Anderson",
+      "image": "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=435&q=80",
+      "desc": "Jackson Anderson is a dedicated and reliable web developer known for his strong work ethic and commitment to excellence. He consistently delivers high-quality work, paying meticulous attention to detail and ensuring that every line of code is error-free. Jackson's proactive attitude enables him to anticipate and address potential issues, ensuring smooth project execution. His reliable and consistent output makes him a trusted and dependable team member."
+    },
+    {
+      "id": 9,
+      "position": "Junio Backend Developer",
+      "name": "Mia Garcia",
+      "image": "https://images.unsplash.com/photo-1519419691348-3b3433c4c20e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=326&q=80",
+      "desc": "Mia Garcia is an organized and efficient web developer specializing in project management. Her strong organizational skills allow her to plan and execute projects effectively, ensuring that tasks are prioritized and resources are allocated efficiently. Mia's excellent time management abilities and attention to detail enable her to meet deadlines and deliver projects within budget. Her exceptional leadership skills and clear communication contribute to successful project outcomes and satisfied clients."
+    },
+    {
+      "id": 10,
+      "position": "Internship",
+      "name": "Aiden Miller",
+      "image": "https://images.unsplash.com/photo-1492447273231-0f8fecec1e3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
+      "desc": "Aiden Miller is a versatile and adaptable web developer with a diverse skillset. He is comfortable working with various programming languages and frameworks, allowing him to tackle diverse projects with ease. Aiden's willingness to learn and explore new technologies enables him to stay ahead of industry trends and deliver innovative solutions. His problem-solving abilities and attention to detail result in robust and efficient web applications. Aiden's ability to collaborate effectively with team members from different disciplines makes him a valuable asset in cross-functional projects."
+    }
   ]
 }
