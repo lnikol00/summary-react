@@ -6,6 +6,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const MainContainer = styled.div`
     margin: 5% 10%;
@@ -30,7 +31,15 @@ const FormContainer = styled.div`
 `
 
 function Apply() {
-    const [validated, setValidated] = useState(false);
+    const [validated, setValidated] = useState<boolean>(false);
+    const [firstName, setFirstName] = useState<string>("");
+    const [lastName, setLastName] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+    const [file, setFile] = useState<string>("");
+    const [select, setSelect] = useState<string>("");
+    const [text, setText] = useState<string>("");
+
+    const navigate = useNavigate();
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         const form = e.currentTarget;
@@ -40,6 +49,17 @@ function Apply() {
         }
 
         setValidated(true);
+
+        const application = { firstName, lastName, email, file, select, text }
+
+        fetch("http://localhost:4500/application", {
+            method: "POST",
+            headers: { 'Content-Type': "application/json" },
+            body: JSON.stringify(application)
+        }).then(() => {
+            console.log("new job added")
+        })
+        navigate("/")
     };
 
     return (
@@ -58,6 +78,7 @@ function Apply() {
                                     required
                                     type="text"
                                     placeholder="First name"
+                                    onChange={(e) => setFirstName(e.target.value)}
                                 />
                                 <Form.Control.Feedback type="invalid">
                                     Please write down your first name.
@@ -75,6 +96,7 @@ function Apply() {
                                     required
                                     type="text"
                                     placeholder="Last name"
+                                    onChange={(e) => setLastName(e.target.value)}
                                 />
                                 <Form.Control.Feedback type="invalid">
                                     Please write down you last name.
@@ -92,9 +114,10 @@ function Apply() {
                                 className="my-3"
                             >
                                 <Form.Control
-                                    type="text"
+                                    type="email"
                                     placeholder="Email"
                                     aria-describedby="inputGroupPrepend"
+                                    onChange={(e) => setEmail(e.target.value)}
                                     required
                                 />
                                 <Form.Control.Feedback type="invalid">
@@ -107,8 +130,9 @@ function Apply() {
                             <InputGroup hasValidation className="py-3">
                                 <Form.Control className="py-3"
                                     type="file"
-                                    placeholder="Input file"
+                                    placeholder="You resume"
                                     aria-describedby="inputGroupPrepend"
+                                    onChange={(e) => setFile(e.target.value)}
                                     required
                                 />
                                 <Form.Control.Feedback type="invalid">
@@ -121,8 +145,8 @@ function Apply() {
                     </Row>
                     <Row className="mb-3">
                         <Form.Group as={Col} controlId="validationCustomFile">
-                            <Form.Select aria-label="Default select example" className="mb-3 py-3" required>
-                                <option>Choose a job your are applying to</option>
+                            <Form.Select aria-label="Default select example" className="mb-3 py-3" required onChange={(e) => setSelect(e.target.value)}>
+                                <option value="">Choose a job your are applying to</option>
                                 <option value="Junior Frontend Developer (React)">Junior Frontend Developer (React)</option>
                                 <option value="Junior Backend Developer (Node.js)">Junior Backend Developer (Node.js)</option>
                             </Form.Select>
@@ -141,6 +165,7 @@ function Apply() {
                                     placeholder="Leave a comment here"
                                     style={{ height: '100px' }}
                                     required
+                                    onChange={(e) => setText(e.target.value)}
                                 />
                             </FloatingLabel>
                             <Form.Control.Feedback type="invalid">
