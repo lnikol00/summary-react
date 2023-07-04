@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import styles from "./home.module.css"
+import * as AiIcons from "react-icons/ai"
+import { Link } from "react-router-dom"
 
 type staffDatas = Array<staffData>
 
@@ -11,14 +13,50 @@ type staffData = {
     image: string
 }
 
+type applyDatas = Array<applyData>
+
+type applyData = {
+    id: number
+    firstName: string
+    lastName: string
+}
+
 function Home() {
 
     const [staff, setStaff] = useState<staffDatas>();
+    const [apply, setApply] = useState<applyDatas>();
+
+    const [show, setShow] = useState<boolean>(false);
+    const [rotate, setRotate] = useState(`${styles.menuUnclicked}`)
+
+    const aboutRef = useRef<null | HTMLDivElement>(null)
+    const employeeRef = useRef<null | HTMLDivElement>(null)
+    const applyRef = useRef<null | HTMLDivElement>(null)
+
+    const executeScrollOne = () => aboutRef.current?.scrollIntoView({ behavior: 'smooth' });
+    const executeScrollTwo = () => employeeRef.current?.scrollIntoView({ behavior: 'smooth' });
+    const executeScrollThree = () => applyRef.current?.scrollIntoView({ behavior: 'smooth' });
+
+    const handleShow = () => {
+        setShow(!show)
+
+        if (!show) {
+            setRotate(`${styles.menuClicked}`)
+        }
+        else {
+            setRotate(`${styles.menuUnclicked}`)
+        }
+    }
 
     useEffect(() => {
         fetch("http://localhost:4500/staff")
             .then((res) => res.json())
             .then((json) => setStaff(json))
+    }, [])
+    useEffect(() => {
+        fetch("http://localhost:4500/application")
+            .then((res) => res.json())
+            .then((json) => setApply(json))
     }, [])
 
 
@@ -34,9 +72,9 @@ function Home() {
                         Summary.co is a cutting-edge company that specializes in hiring top-notch web developers. With a forward-thinking approach, they have established themselves as a leading player in the technology industry.
                     </div>
                     <div className={styles.buttons}>
-                        <button>About us</button>
-                        <button>Employees</button>
-                        <button>Current applicants</button>
+                        <button onClick={executeScrollOne}>About us</button>
+                        <button onClick={executeScrollTwo}>Employees</button>
+                        <button onClick={executeScrollThree}>Current applicants</button>
                     </div>
                 </div>
                 <div className={styles.image}>
@@ -44,7 +82,7 @@ function Home() {
                 </div>
             </div>
             <div className={styles.bottomContainer}>
-                <div className={styles.aboutContainer}>
+                <div className={styles.aboutContainer} ref={aboutRef}>
                     <h1>About us</h1>
                     <p>Summary.co is a renowned company that specializes in hiring exceptional web developers, solidifying its position as a leader in the technology industry. With a keen eye for talent, they have established a rigorous selection process to identify and recruit the most skilled and capable individuals in the field of web development. These developers are handpicked based on their expertise in a wide range of programming languages, frameworks, and tools, ensuring they can tackle diverse projects with confidence and precision.
                         At Summary.co, a culture of collaboration and innovation thrives. The company fosters a work environment that encourages developers to share ideas, collaborate on projects, and continuously learn from one another. Through regular team meetings and brainstorming sessions, they create a vibrant atmosphere that fuels creativity and cultivates new perspectives.</p>
@@ -57,7 +95,7 @@ function Home() {
                         In addition to their technical prowess, the web developers at Summary.co possess excellent problem-solving skills. They excel at analyzing complex requirements, breaking them down into manageable tasks, and developing innovative solutions that address client needs. Their ability to think critically and strategically enables them to overcome challenges and deliver scalable, robust, and secure web applications.
                         Summary.co prides itself on maintaining a positive work culture that values diversity, inclusivity, and work-life balance. They believe that a happy and motivated workforce leads to better productivity and creativity. The company fosters an inclusive environment where every team member feels valued and empowered to contribute their unique skills and perspectives.</p>
                 </div>
-                <div className={styles.employeesContainer}>
+                <div className={styles.employeesContainer} ref={employeeRef}>
                     <h1>Employees</h1>
                     {staff?.map((employee, index) => {
 
@@ -82,9 +120,27 @@ function Home() {
                         )
                     })}
                 </div>
-                <div className={styles.lineOne}></div>
-                <div className={styles.applyContainer}>
-
+                <div className={styles.applyContainer} ref={applyRef}>
+                    <h1>Currently Applied</h1>
+                    <button className={styles.applyButton} onClick={handleShow}>
+                        <div className={rotate}>
+                            <AiIcons.AiOutlineRight />
+                        </div>
+                        <span>Currently applied</span>
+                        {apply?.length}
+                    </button>
+                    {show ?
+                        <div className={styles.names}>
+                            {apply?.map((name, index) => {
+                                return (
+                                    <h4 key={name.id}>{index + 1}. {name.firstName} {name.lastName}</h4>
+                                )
+                            })}
+                        </div>
+                        :
+                        null
+                    }
+                    <Link to="/apply">If you are interested click here</Link>
                 </div>
             </div>
         </div >
