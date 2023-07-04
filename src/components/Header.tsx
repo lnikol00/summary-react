@@ -197,7 +197,7 @@ function Header() {
                         <div></div>
                         <div></div>
                     </LeftWrapper>
-                    <Heading><Link to="/">Summmary.co</Link></Heading>
+                    <Heading><Link to="/">Summary.co</Link></Heading>
                 </Left>
                 <Right>
                     <MenuLink><Link to="/">Home</Link></MenuLink>

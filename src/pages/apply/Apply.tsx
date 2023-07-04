@@ -6,7 +6,6 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const MainContainer = styled.div`
     margin: 5% 10%;
@@ -31,15 +30,15 @@ const FormContainer = styled.div`
 `
 
 function Apply() {
+
     const [validated, setValidated] = useState<boolean>(false);
+
     const [firstName, setFirstName] = useState<string>("");
     const [lastName, setLastName] = useState<string>("");
     const [email, setEmail] = useState<string>("");
     const [file, setFile] = useState<string>("");
     const [select, setSelect] = useState<string>("");
     const [text, setText] = useState<string>("");
-
-    const navigate = useNavigate();
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         const form = e.currentTarget;
@@ -50,16 +49,18 @@ function Apply() {
 
         setValidated(true);
 
-        const application = { firstName, lastName, email, file, select, text }
+        if (validated === true) {
 
-        fetch("http://localhost:4500/application", {
-            method: "POST",
-            headers: { 'Content-Type': "application/json" },
-            body: JSON.stringify(application)
-        }).then(() => {
-            console.log("new job added")
-        })
-        navigate("/")
+            const application = { firstName, lastName, email, file, select, text }
+
+            fetch("http://localhost:4500/application", {
+                method: "POST",
+                headers: { 'Content-Type': "application/json" },
+                body: JSON.stringify(application)
+            }).then(() => {
+                console.log("new job application added")
+            })
+        }
     };
 
     return (
