@@ -4,9 +4,14 @@ import { Link } from "react-router-dom"
 
 type Props = {
     openNavbar?: boolean;
+    scroll?: boolean;
 }
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.div<Props>`
+    position: sticky;
+    top: 0;
+    z-index:5;
+    background-color:white;
     box-shadow: 5px 0px 10px #ccc;
 `
 
@@ -148,7 +153,7 @@ const Navbar = styled.nav<Props>`
     width: 100%;
     height: 450px;
     background-color: white;
-    top: ${(props) => (props.openNavbar ? "72px" : "-100%")};
+    top: ${(props) => (props.openNavbar ? "72px" : "-1000%")};
     transition: all 500ms ease;
     z-index:5;
     border-bottom: 1px solid black;

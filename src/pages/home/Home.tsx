@@ -140,7 +140,7 @@ function Home() {
                         :
                         null
                     }
-                    <Link to="/apply">If you are interested click here</Link>
+                    <Link to="/apply" >If you are interested click here</Link>
                 </div>
             </div>
         </div >

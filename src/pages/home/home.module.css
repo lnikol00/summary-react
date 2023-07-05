@@ -137,13 +137,14 @@
     border-radius: 16px;
     color: white;
     font-size: 1.5em;
+    margin-bottom: 15px;
 }
 
 .applyButton div {
     padding-bottom: 6px;
 }
 
-.applyButton a {
+.applyContainer a {
     font-size: 1.2em;
     color: black;
     padding-top: 10px 0;
